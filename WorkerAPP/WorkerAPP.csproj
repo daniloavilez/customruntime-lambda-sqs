@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AWSProjectType>Lambda</AWSProjectType>
+    <UserSecretsId>dotnet-WorkerAPP-92DD0E1C-F851-4C14-A93A-486FA307DB82</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="4.0.0" />
+    <PackageReference Include="Amazon.Lambda.RuntimeSupport" Version="1.0.0" />
+    <PackageReference Include="Amazon.Lambda.SQSEvents" Version="1.1.0" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.105.18" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+    <PackageReference Include="AWSSDK.SQS" Version="3.3.102.83" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.1" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,45 @@
+{
+	"AWSTemplateFormatVersion" : "2010-09-09",
+	"Transform" : "AWS::Serverless-2016-10-31",
+	"Description" : "An AWS Serverless Application that uses the ASP.NET Core framework running in Amazon Lambda.",
+
+	"Parameters" : {
+	},
+
+	"Conditions" : {
+	},
+
+	"Resources" : {
+
+		"AspNetCoreFunction" : {
+			"Type" : "AWS::Serverless::Function",
+			"Properties": {
+				"Handler": "not-required",
+				"Runtime": "provided",
+				"CodeUri": "",
+				"MemorySize": 256,
+				"Timeout": 30,
+				"Role": null,
+				"Policies": [ 
+                    "AWSLambdaFullAccess",
+                    "AmazonSQSFullAccess"
+                ],
+				"Environment" : {
+					"Variables" : {
+					}
+				},
+				"Events": {
+                    "SQSResource": {
+                        "Type": "SQS",
+                        "Properties": {
+                            "Queue": "arn:aws:sqs:sa-east-1:265346282853:fila_teste"
+                        }
+                    }
+				}
+			}
+		}
+	},
+
+	"Outputs" : {
+	}
+}
